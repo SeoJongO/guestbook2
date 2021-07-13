@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Write Form</title>
+<title>Delete Form</title>
 </head>
 <body>
 
