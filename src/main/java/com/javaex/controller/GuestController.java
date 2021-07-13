@@ -30,7 +30,6 @@ public class GuestController extends HttpServlet {
 			
 			List<GuestBookVo> guestList = guestDao.guestList();
 			
-			
 			request.setAttribute("gList", guestList);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/list.jsp");
@@ -59,6 +58,10 @@ public class GuestController extends HttpServlet {
 		// 삭제폼
 		} else if("dForm".equals(action)) {
 			System.out.println("[삭제폼]");
+			
+			int no = Integer.parseInt(request.getParameter("no"));
+			
+			request.setAttribute("no", no);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/deleteForm.jsp");
 			rd.forward(request, response);
