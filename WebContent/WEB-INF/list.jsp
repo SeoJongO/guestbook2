@@ -3,7 +3,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.javaex.vo.GuestBookVo"%>
 <%
-List<GuestBookVo> guestList = (List<GuestBookVo>) request.getAttribute("gList");
+	List<GuestBookVo> guestList = (List<GuestBookVo>) request.getAttribute("gList");
 %>
 <!DOCTYPE html>
 <html>
