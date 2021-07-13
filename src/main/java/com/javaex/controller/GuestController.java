@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.javaex.dao.GuestBookDao;
+import com.javaex.util.WebUtil;
 import com.javaex.vo.GuestBookVo;
 
 @WebServlet("/gc")
@@ -32,8 +33,7 @@ public class GuestController extends HttpServlet {
 			
 			request.setAttribute("gList", guestList);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/list.jsp");
-			rd.forward(request, response);
+			WebUtil.forward(request, response, "/WEB-INF/list.jsp");
 			
 		// 등록
 		} else if("insert".equals(action) ) {
@@ -53,7 +53,7 @@ public class GuestController extends HttpServlet {
 				System.out.println("등록 실패");
 			}
 			
-			response.sendRedirect("/guestbook2/gc?action=list");
+			WebUtil.redirect(request, response, "/guestbook2/gc?action=list");
 		
 		// 삭제폼
 		} else if("dForm".equals(action)) {
@@ -63,8 +63,7 @@ public class GuestController extends HttpServlet {
 			
 			request.setAttribute("no", no);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/deleteForm.jsp");
-			rd.forward(request, response);
+			WebUtil.forward(request, response, "/WEB-INF/deleteForm.jsp");
 
 		// 삭제	
 		} else if("delete".equals(action)) {
@@ -81,13 +80,13 @@ public class GuestController extends HttpServlet {
 				System.out.println("삭제 실패");
 			}
 			
-			response.sendRedirect("/guestbook2/gc?action=list");
+			WebUtil.redirect(request, response, "/guestbook2/gc?action=list");
 		
 		// 재입력
 		} else {
 			System.out.println("재입력");
 			
-			response.sendRedirect("/guestbook2/gc?action=list");
+			WebUtil.redirect(request, response, "/guestbook2/gc?action=list");
 		}
 		
 	}
