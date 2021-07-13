@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<form action="/guestbook2/gc" method="get">
+	<form action="/guestbook2/gc" method="post">
 		<input type="hidden" name="action" value="insert">
 		<table border="1">
 			<tr>
