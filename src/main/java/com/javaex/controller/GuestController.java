@@ -21,7 +21,6 @@ public class GuestController extends HttpServlet {
 		
 		GuestBookDao guestDao = new GuestBookDao();
 		request.setCharacterEncoding("UTF-8");
-		
 		String action = request.getParameter("action");
 		System.out.println(action);
 		
